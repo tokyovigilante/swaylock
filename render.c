@@ -109,10 +109,11 @@ void render_frame(struct swaylock_surface *surface) {
 	char *text = NULL;
 	const char *layout_text = NULL;
 
-	bool draw_indicator = state->args.show_indicator &&
-		(state->auth_state != AUTH_STATE_IDLE ||
-			state->input_state != INPUT_STATE_IDLE ||
-			state->args.indicator_idle_visible);
+	bool draw_indicator = state->auth_state != AUTH_STATE_PREAUTH &&
+			state->args.show_indicator &&
+			(state->auth_state != AUTH_STATE_IDLE ||
+				state->input_state != INPUT_STATE_IDLE ||
+				state->args.indicator_idle_visible);
 
 	if (draw_indicator) {
 		if (state->input_state == INPUT_STATE_CLEAR) {
