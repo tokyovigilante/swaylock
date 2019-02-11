@@ -13,6 +13,7 @@ enum auth_state {
 	AUTH_STATE_IDLE, // nothing happening
 	AUTH_STATE_VALIDATING, // currently validating password
 	AUTH_STATE_INVALID, // displaying message: password was wrong
+	AUTH_STATE_PREAUTH,
 };
 
 // Indicator state: status of password buffer / typing letters
@@ -69,6 +70,7 @@ struct swaylock_args {
 	bool daemonize;
 	int ready_fd;
 	bool indicator_idle_visible;
+	uint32_t password_grace_period;
 };
 
 struct swaylock_password {
