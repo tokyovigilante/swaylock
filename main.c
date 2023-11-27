@@ -1,5 +1,4 @@
 #include <assert.h>
-#include <ctype.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <getopt.h>
@@ -16,7 +15,6 @@
 #include <wayland-client.h>
 #include <wordexp.h>
 #include "background-image.h"
-#include "cairo.h"
 #include "comm.h"
 #include "log.h"
 #include "loop.h"
